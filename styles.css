@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Oi", serif;
+  font-weight: 100;
+  font-style: normal;
+  color: #deb887;
+  text-align: center;
+  font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  flex: 1;
+}
+
+header {
+  font-size: 42px;
+  margin: 30px auto 0;
+  width: 55%;
+  box-shadow: 0 15px 10px -10px currentColor;
+}
+
+.header-para {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 18px;
+}
+
+img {
+  width: 120px;
+  height: auto;
+  border-radius: 50px;
+}
+
+.result {
+  margin: 50px auto;
+  padding-bottom: 8px;
+  width: 31%;
+  box-shadow: 0 15px 10px -10px currentColor;
+}
+
+.enemy-weapon,
+.player-weapon {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+}
+
+.weapon-pick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.play-again {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.play-again button {
+  font-family: "Oi", serif;
+  font-weight: 100;
+  font-style: normal;
+  color: #deb887;
+  border: 2px solid currentColor;
+  padding: 18px 30px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.play-again button:active {
+  color: white;
+  background-color: #deb887;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #deb887;
+}
+
+.footer-para {
+  background-color: #deb887;
+  color: #202020;
+  padding: 10px 0;
+}
+
+.github-logo {
+  width: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.github-logo:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+.win {
+  color: #008000;
+}
+
+.lose {
+  color: #ff0000;
+}

@@ -3,30 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./images/logo.png" />
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oi&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>ROCK-PAPER-SCISSORS</h1>
-    <p>
-      Rock, Paper, Scissors is a simple game of quick choices and instant
-      results. First to score 5 wins.
-    </p>
-    <p>Choose your weapon:</p>
+    <div class="body">
+      <header>ROCK-PAPER-SCISSORS</header>
+      <p class="header-para">Choose your weapon</p>
 
-    <div class="buttons">
-      <button id="rock">Rock</button><button id="paper">Paper</button
-      ><button id="scissors">Scissors</button>
+      <div class="buttons">
+        <button id="ROCK">
+          <img src="./images/rock.jpg" alt="A picture of rock." /></button
+        ><button id="PAPER">
+          <img src="./images/paper.jpg" alt="A picture of paper." /></button
+        ><button id="SCISSORS">
+          <img src="./images/scissors.jpg" alt="A picture of scissors." />
+        </button>
+      </div>
+
+      <p class="result">First to score 5 wins the game</p>
+
+      <div class="score-container">
+        <div class="weapon-pick">
+          <img
+            class="player-weapon"
+            src="./images/question-mark.jpg"
+            alt="Question mark icon"
+          />
+          <p id="player-score">Player score: 0</p>
+        </div>
+
+        <p>VS.</p>
+
+        <div class="weapon-pick">
+          <img
+            class="enemy-weapon"
+            src="./images/question-mark.jpg"
+            alt="Question mark icon"
+          />
+          <p id="computer-score">Computer score: 0</p>
+        </div>
+      </div>
+
+      <div class="play-again"></div>
     </div>
 
-    <br />
-
-    <div id="result">Result:</div>
-    <div id="player-score">Player score: 0</div>
-    <div id="computer-score">Computer score: 0</div>
-
-    <br />
-
-    <div id="play-again"></div>
+    <footer>
+      <p class="footer-para">Copyright &copy 2026 markjasperrojas</p>
+      <a href="https://github.com/markjasperrojas" target="_blank"
+        ><img class="github-logo" src="./images/github.svg" alt="Github logo"
+      /></a>
+    </footer>
   </body>
 </html>

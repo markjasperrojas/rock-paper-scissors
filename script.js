@@ -1,9 +1,11 @@
 const buttons = document.querySelectorAll("button");
 const playerScoreDisplay = document.querySelector("#player-score");
 const computerScoreDisplay = document.querySelector("#computer-score");
-const resultDisplay = document.querySelector("#result");
-const playAgain = document.querySelector("#play-again");
+const resultDisplay = document.querySelector(".result");
+const playAgain = document.querySelector(".play-again");
 const playAgainBtn = document.createElement("button");
+const playerWeapon = document.querySelector(".player-weapon");
+const enemyWeapon = document.querySelector(".enemy-weapon");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -20,26 +22,28 @@ function getComputerChoice() {
   const computerChoice = Math.floor(Math.random() * 3);
 
   if (computerChoice === 0) {
-    return "rock";
+    return "ROCK";
   } else if (computerChoice === 1) {
-    return "paper";
+    return "PAPER";
   } else {
-    return "scissors";
+    return "SCISSORS";
   }
 }
 
 function playRound(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
-    resultDisplay.textContent = `Result: Tie, both chose ${playerChoice}`;
+    resultDisplay.textContent = `TIE! BOTH CHOSE ${playerChoice}`;
   } else if (beats(playerChoice, computerChoice)) {
     playerScore++;
     playerScoreDisplay.textContent = `Player score: ${playerScore}`;
-    resultDisplay.textContent = `Result: You win, ${playerChoice} beats ${computerChoice}`;
+    resultDisplay.textContent = `YOU WIN! ${playerChoice} BEATS ${computerChoice}`;
   } else {
     computerScore++;
     computerScoreDisplay.textContent = `Computer score: ${computerScore}`;
-    resultDisplay.textContent = `Result: You lose, ${computerChoice} beats ${playerChoice}`;
+    resultDisplay.textContent = `YOU LOSE! ${computerChoice} BEATS ${playerChoice}`;
   }
+
+  changeImage(playerChoice, computerChoice);
 
   winner();
 
@@ -48,20 +52,22 @@ function playRound(playerChoice, computerChoice) {
 
 function beats(a, b) {
   return (
-    (a === "rock" && b === "scissors") ||
-    (a === "paper" && b === "rock") ||
-    (a === "scissors" && b === "paper")
+    (a === "ROCK" && b === "SCISSORS") ||
+    (a === "PAPER" && b === "ROCK") ||
+    (a === "SCISSORS" && b === "PAPER")
   );
 }
 
 function winner() {
   if (playerScore === 5 || computerScore === 5) {
-    playAgainBtn.textContent = "Play Again";
+    playAgainBtn.textContent = "Play again";
 
     if (playerScore === 5) {
-      resultDisplay.textContent = "Congratulations! You won.";
+      resultDisplay.textContent = "CONGRATULATIONS! YOU WON.";
+      resultDisplay.classList.toggle("win");
     } else {
-      resultDisplay.textContent = "Game Over!";
+      resultDisplay.textContent = "GAME OVER!";
+      resultDisplay.classList.toggle("lose");
     }
 
     playAgainBtn.addEventListener("click", () => {
@@ -69,6 +75,32 @@ function winner() {
     });
 
     playAgain.appendChild(playAgainBtn);
+  }
+
+  return;
+}
+
+function changeImage(playerChoice, computerChoice) {
+  if (playerChoice === "ROCK") {
+    playerWeapon.src = "./images/rock.jpg";
+    playerWeapon.alt = "A picture of rock.";
+  } else if (playerChoice === "PAPER") {
+    playerWeapon.src = "./images/paper.jpg";
+    playerWeapon.alt = "A picture of paper.";
+  } else {
+    playerWeapon.src = "./images/scissors.jpg";
+    playerWeapon.alt = "A picture of scissors.";
+  }
+
+  if (computerChoice === "ROCK") {
+    enemyWeapon.src = "./images/rock.jpg";
+    enemyWeapon.alt = "A picture of rock.";
+  } else if (computerChoice === "PAPER") {
+    enemyWeapon.src = "./images/paper.jpg";
+    enemyWeapon.alt = "A picture of paper.";
+  } else {
+    enemyWeapon.src = "./images/scissors.jpg";
+    enemyWeapon.alt = "A picture of scissors.";
   }
 
   return;
