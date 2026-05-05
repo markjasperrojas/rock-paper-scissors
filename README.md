@@ -1,6 +1,8 @@
 # rock-paper-scissors
 
-Rock, Paper, Scissors is a simple game of quick choices and instant results. In this learning project from The Odin Project, I learned a lot—especially the basics of DOM manipulation. I also recalled the mechanics of Flexbox and learned some new CSS properties.
+Rock, Paper, Scissors is a simple game of quick choices and instant results. In this learning project from [The Odin Project](https://www.theodinproject.com/), I learned a lot, especially the basics of DOM manipulation. I also recalled the mechanics of Flexbox and learned some new CSS properties.
+
+[Live Demo](https://markjasperrojas.github.io/rock-paper-scissors/)
 
 ### Image Credits
 
